@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<script src="http://libs.useso.com/js/d3/3.4.8/d3.min.js"></script>
+<script src="../static/js/cal-heatmap.min.js"></script>
+<link rel="stylesheet" href="../static/css/cal-heatmap.css" />
+<script src="../static/js/jquery-1.8.1.min.js"></script>
+
+<div id="cal-heatmap"></div>
+<script type="text/javascript">
+(function() {
+	var cal = new CalHeatMap();
+	cal.init({
+		itemSelector: "#cal-heatmap",
+		domain: "year",
+		subDomain:"day",
+		// subDomainTextFormat: "%d",
+		data: "getData",
+		start: new Date(2014, 0, 0),
+		cellSize: 10,
+		range: 2,
+		cellPadding:5,
+		cellRadius:0,
+		domainGutter: 0,
+		tooltip:true,
+		// previousSelector: "#example-b-PreviousDomain-selector",
+		// nextSelector: "#example-b-NextDomain-selector",
+
+		legend: [2, 4, 6, 8]
+	});
+})();
+</script>
+</script>
+
+
+</html>

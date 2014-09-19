@@ -1,0 +1,61 @@
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../static/js/gammacalendar.js" type="text/javascript"></script>
+    <link href="../static/js/gammacalendar.css" rel="stylesheet" type="text/css"></link>
+</head>
+<body>
+    <div id      ="example1"></div>
+    
+    <script type ="text/javascript">
+    var zh = {
+        daysOfWeek: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+
+        months: ['一月', '二月', '三月', '四月', '五月', '六月',
+        '七月', '八月', '九月', '十月', '十一月', '十二月']
+    };
+    
+    
+    var a=[];
+    function hello(list){
+        for(i=0;i<list.length;i++){
+            a[a.length]={
+                date:new Date(list[i][0],list[i][1],list[i][2]),
+                value:list[i][3]
+            }
+        }
+        return a;
+    }
+    $.ajax(
+    {
+        url: "getData",
+        async: false,
+        success: function(data)
+        {
+            jsondata = JSON.parse(data);
+            hello(jsondata);
+            
+        }
+    });
+    
+
+    
+    
+    $(function() {
+        $('#example1').gammacalendar(
+            a,
+            {
+                weeks: 100,
+                i18n: zh,
+                startOnSunday: true,
+                highlightToday: true,
+                baseColor: {
+                    r: 120,
+                    g: 120,
+                    b: 0
+                }
+            });
+    });
+    </script>
+</body>
+</html>

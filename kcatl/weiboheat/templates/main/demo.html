@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+</head>
+<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+</head>
+<div class="container">
+	<div class="page-header">
+		<h3><small>一个用Python写的小玩意儿</small><h3>
+		</div>
+		<div class="row">
+			<div class="col-md-5">
+				<h4><small>一个用Python写的小玩意儿</small><h4>
+				<img src="http://tp2.sinaimg.cn/2699622513/50/22851287381/1" alt="" class="img-circle">
+				<h4 class="text-right"><small>还在继续...</small><h4>
+				
+			</div>
+			<div class="col-md-4 col-md-offset-1">
+				<form id="form" method="post" action='reg/registration'>
+					<div class="form-group">
+						<label for="exampleInputEmail1">帐号</label>
+						<div class="input-group">
+							<span class="input-group-addon glyphicon glyphicon-user"></span>
+							<input type="text" class="form-control" id="exampleInputEmail1" placeholder="邮箱/会员帐号/手机号" required oninvalid="setCustomValidity('必须填写！');" oninput="setCustomValidity('');">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">密码</label>
+						<div class="input-group">
+							<span class="input-group-addon glyphicon glyphicon-lock"></span>
+							<input type="password" class="form-control" id="exampleInputPassword1" placeholder="请输入密码" required oninvalid="setCustomValidity('必须填写！');" oninput="setCustomValidity('');">
+						</div>
+					</div>
+					<button type="submit" class="btn btn-default">登录</button>
+				</form>
+			</div>
+		</div>
+		
+
+
+	</div>
+
+	</html>
