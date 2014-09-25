@@ -2,7 +2,9 @@ from django.shortcuts import render, render_to_response
 from django.http import HttpResponse
 from weidemo import weidemo
 from kcatl import settings
+from weidemo import * 
 import json
+from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 def index(req):
@@ -13,3 +15,24 @@ def getData(req):
 	return HttpResponse(json.dumps(data))
 def test(req):
 	return render_to_response('main/demo.html', {})
+@csrf_exempt
+def login(req):
+	if not req.POST.has_key('userid') or req.POST.has_key('userpasswd'):
+		print "no userid or userpasswd found"
+	else:
+		USER_ID = userid
+		USER_PASSWD = userpasswd
+		print USER_ID, USER_PASSWD
+		try:
+			access_token, expires_in = make_access_token(USER_ID, USER_PASSWD)
+			check_access_token(access_token, expires_in)
+			userid = client.account.get_uid.get().uid
+			total_number, i = getTotal()
+			conn = DBconnector()
+			InsertUesrInfo(userid)
+			InsertUserData()
+		except:
+			print "get token failed"
+	
+			
+		
